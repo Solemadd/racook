@@ -6,15 +6,32 @@
     <link rel="stylesheet" href="style.css">
     <title>Racook</title>
   </head>
+
+  <header>
+    <a href="login.html"><img src="img/back.png" class="retour" alt="Retour"></a>
+  </header>
+
+  <main>
   <body id="screen">
     <img class="biglogo" src="img/logo.png" alt="LOGO">
     <form action="" class="login">
-        <h3>Connexion:</h3>
-        <input type="text" name="username" class="login-input" placeholder="Adresse mail:">
-        <input type="password" name="password" class="login-input" placeholder="Mot de passe:">
-        <input type="submit" class="login send">
+
+        <h3>Inscription:</h3>
+
+        <input type="mail" name="mail" placeholder="Adresse mail:" required="true">
+        <input type="text" name="name" placeholder="Nom d'utilisateur:" required="true">
+        <hr>
+        <input type="text" name="name" placeholder="Prénom:" required="true">
+        <input type="text" name="name" placeholder="Nom de famille:" required="true">
+        <input type="number" name="age" min="13" max="130" placeholder="Age" required="true">
+        <hr>
+        <input type="password" name="password" placeholder="Mot de passe:" required="true">
+        <input type="password" name="passwordCONF" placeholder="Confirmer le mot de passe:" required="true">
+        
+        <input type="submit" class="button">
         
     </form>
-
     </body>
+  </main>
+  
 </html>

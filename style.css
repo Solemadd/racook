@@ -1,3 +1,14 @@
+main{
+    font-family: 'Helvetica', sans-serif;
+    font-weight: normal;
+    color: #333;
+}
+
+.retour{
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
 .homelogo{width: 70%;
 margin-inline: 15%;
 margin-top: 40%;}
@@ -26,6 +37,7 @@ margin-top: 10%;}
     border: 1px solid var(--secondary);
     font-size: 16px;
     margin-bottom: 10%;
+    padding-bottom: 3%;
 }
 
 
@@ -39,10 +51,16 @@ margin-top: 10%;}
     margin-bottom: 5%;
 }
 
-.login > input >.send{ width: 30%;
-    margin-inline-start: 65%;
-margin-inline-end: 5%;
+.login > .button{width: 40%;
+        margin-inline-start: 56%;
+        margin-inline-end: 5%;
+        margin-top: 5%;}
+
+.button:hover{
+    background-color: var(--secondary);
 }
+
+
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Helvetica', sans-serif; 
@@ -52,6 +70,16 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 10%; 
     margin-inline: 10%
   }
+
+hr{
+    width: 90%;
+    color: var(--lighter);
+    margin-inline: 5%;
+}
+
+a {
+    margin-left: 5%;
+}
 
 
 html {background-color: var(--secondary);}
