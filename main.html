@@ -1,13 +1,41 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
-    <title>Racook</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Racook - Main</title>
   </head>
-  <a href="login.html"><body id="screen">
-    <img class="homelogo" src="img/logo.png" alt="LOGO">
-    <img class="load" src="img/load.gif" alt="loading...">
-    </body></a>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <img src="chemin-vers-le-logo.png" alt="Logo Racook" />
+        </div>
+        <input
+          type="search"
+          id="search"
+          name="search"
+          placeholder="Rechercher..."
+        />
+        <button class="search-button">🔍</button>
+        <button class="filter-button">⚙️</button>
+      </header>
+
+      <main>
+        <div class="recipe" id="recipe1">
+          <!-- Le contenu ici sera généré dynamiquement -->
+        </div>
+        <div class="recipe" id="recipe2">
+          <!-- Le contenu ici sera généré dynamiquement -->
+        </div>
+        <!-- Plus de div pour d'autres recettes si nécessaire -->
+      </main>
+
+      <nav>
+        <button class="nav-button">➕</button>
+        <button class="nav-button">🏠</button>
+        <button class="nav-button">👤</button>
+      </nav>
+    </div>
+  </body>
 </html>
