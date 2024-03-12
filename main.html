@@ -8,10 +8,38 @@
   </head>
 
   <script> 
-  let target = document.getElementById("filtres")
-  document.addEventListener("#filter"){
-    console.log(target)}
+  //id de la catégorie à cacher:filtres
+  //id du boutton qui effectue cette action:filter
+  //lorsque j'appuie sur le boutton filtre, la classe hidden de l'element doit disparaitre
+  //lorsque j'appuie sur valider, la classe reviens, et l'element est caché à nouveau.
+  
+
+
+
+  //PAS TOUCHE A LA SUITE
+
+  
+  // Get the button:
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+} 
   </script>
+  
 
   <nav class="navbar">    
     <img class="smalllogo" src="img/logo.png" alt="LOGO">   
@@ -25,7 +53,13 @@
       </form> 
       <hr class="primary width100">
   </nav>
-  <aside id="filtres" class="hidden">
+
+  <footer>
+    <button id="topBTN" onclick="topFunction()">↑</button>
+    
+  </footer>
+
+  <aside id="filtres" class="">
     <h3>Filtres:</h3>
     <form class="margin5">
       <p>Ingrédients:</p> <select name="" id="">
@@ -34,14 +68,26 @@
       <br>
       <p>Note minimale:</p> <input type="range" min="1" max="5"> <br>
       <p>Difficulté:</p> <input type="range" min="1" max="5">
-      <hr>
+      <br class="margin10">
       <input type="submit">
     </form>
+    <hr class="width100 primary">
   </aside>
-
-  <body>
-  
-  
-  
-  </body>
+ 
+  <main>
+    <section class="carte">
+      <article>
+          <div>
+          <h5 class="margin5">Tarte aux carottes</h5>
+          <h6>Ingrédients:</h6>
+            <p>pate a tarte, 5 grames</p>
+            <p>carotte, 2 grames</p>
+          <h6>Cuisson:</h6>
+            <p>5 minutes à 200 degrès</p>
+        </div>
+      </article>
+      <img src="img/recettes/carottes.jpg" alt="image de petites tartes à la carotte">
+      <button>Voir la recette</button>
+    </section>
+  </main>
 </html>
