@@ -7,6 +7,12 @@
     <title>Racook</title>
   </head>
 
+  <script> 
+  let target = document.getElementById("filtres")
+  document.addEventListener("#filter"){
+    console.log(target)}
+  </script>
+
   <nav class="navbar">    
     <img class="smalllogo" src="img/logo.png" alt="LOGO">   
     <form action="">
@@ -15,11 +21,11 @@
            name="search"
            placeholder="Rechercher...">
         <button class="search-button">🔍</button>
-        <button class="filter-button">⚙️</button>
+        <button class="filter-button" id="filter">⚙️</button>
       </form> 
       <hr class="primary width100">
   </nav>
-  <aside>
+  <aside id="filtres" class="hidden">
     <h3>Filtres:</h3>
     <form class="margin5">
       <p>Ingrédients:</p> <select name="" id="">
