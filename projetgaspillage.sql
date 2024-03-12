@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 11 mars 2024 à 15:53
+-- Généré le : mar. 12 mars 2024 à 10:45
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.13
 
@@ -123,9 +123,10 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `prenom` varchar(255) NOT NULL,
   `nom` varchar(255) NOT NULL,
-  `nom_utilisateur` varchar(255) NOT NULL,
-  `adresse_e_mail` varchar(255) NOT NULL,
-  `mot_de_passe` varchar(255) NOT NULL,
+  `age` int NOT NULL,
+  `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `ID_role` int NOT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `ID_role` (`ID_role`)
