@@ -66,14 +66,22 @@ margin-top: 10%;}
 
 
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 ,p {
     font-family: 'Helvetica', sans-serif; 
-    font-size: 24px; 
-    font-weight: bold; 
     color: #333; 
-    margin-bottom: 10%; 
-    margin-inline: 10%
-  }
+    margin: 2px;
+} 
+  h1, h2, h3, h4, h5, h6 {font-weight: bold;}
+
+/* LES TAiLLES DES TEXTES ICI*/
+h1{font-size: 300%;}h2{font-size: 250%;}h3{font-size: 200%;}h4{font-size: 175%;}h5{font-size: 150%;}p,h6{font-size: 100%;}
+
+.margin5{
+    margin-bottom: 5%; 
+    margin-inline: 5%}
+.margin10, h1, h2, h3{
+  margin-bottom: 10%; 
+  margin-inline: 10%}
 
   hr{border: 1px solid;}
 
@@ -99,16 +107,19 @@ a {
  position: sticky;
  top: 0px;
 }
-.navbar > form{margin-top: 7.5%; float:left; display:inline; }
+.navbar > form{margin-top: 7.5%; float:left; display:inline; width: 70%;}
 .navbar > img{float:left; display:inline;}
-.navbar > form > input { background-color: var(--lighter); border-radius: 10px;border: 1px solid var(--lighter);text-align: center;}
-.navbar > form > button{background-color: transparent; border: 1px solid transparent;}
-.navbar > form > button:hover{font-size: 20px;}
+.navbar > form > input {font-size: 100%;width: 10rem;background-color: var(--lighter); border-radius: 20rem ;border: 1px solid var(--lighter);text-align: center;}
+.navbar > form > button{font-size: 100%;background-color: transparent;border-radius: 10rem; border: 1px solid transparent;}
+.navbar > form > button:hover button:active{
+    background-color: var(--lighter);}
 
 .light_body{
     background-color: var(--background);
 }
 
+aside > form > input{display: inline;}
+aside > form > p{display: inline;}
 
 html {background-color: var(--secondary);
 position: absolute;}
