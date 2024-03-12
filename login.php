@@ -8,7 +8,7 @@
   </head>
 
   <header>
-    <a href="home.html"><img src="img/back.png" class="retour" alt="Retour"></a>
+    <a href="home.php"><img src="img/back.png" class="retour" alt="Retour"></a>
   </header>
 
   <main>
@@ -19,12 +19,12 @@
         <input type="text" name="email" class="login-input" placeholder="Adresse mail:" required>
         <input type="password" name="password" class="login-input" placeholder="Mot de passe:" required>
         <input type="submit" class="login send">
-        <a href="register.html">Créer un compte</a>
+        <a href="register.php">Créer un compte</a>
     </form>
 
     <?php
 
-    if(isset($_POST["email"]) && isset($_POST["password"])){
+      if(isset($_POST["email"]) && isset($_POST["password"])){
         $email = $_POST["email"];
         $pass = $_POST["password"];
 
@@ -45,7 +45,7 @@
     
             }
         };
-    }
+}
     ?>
 
   </body>
