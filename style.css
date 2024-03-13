@@ -115,6 +115,7 @@ a {
 .primary{color: var(--primary);}
 .secondary{color: var(--secondary);}
 .lighter{color: var(--lighter);}
+.bg-bg{background-color: var(--background);}
 .bg-prim{background-color: var(--primary);}
 .bg-sec{background-color: var(--secondary);}
 .bg-light{background-color: var(--lighter);}

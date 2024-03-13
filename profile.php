@@ -11,7 +11,7 @@
     <main class="perso">
         <button><img src="img/trophypng.png" alt=""><h2>3</h2><h2>Trophée</h2></button>
         <button><img src="img/coin.png" alt=""><h2>65</h2><h2>Raccoins</h2></button>
-        <button><h2>? Quizz ?</h2></button>
+        <button onclick="window.location = 'quizz1.html'"><h2>? Quizz ?</h2></button>
     </main>
 
     <main class="param">

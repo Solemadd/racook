@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="bg-bg">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,37 +7,35 @@
     <link rel="stylesheet" href="style.css" />
     <!-- Vérifie que le chemin d'accès à ton fichier CSS est correct -->
   </head>
-  <body class="light_body">
+  <body class="bg-bg">
     <header class="navbar">
       <!-- Ici, tu peux insérer d'autres éléments de navigation si nécessaire -->
     </header>
 
-    <main class="width90 margin10">
-      <section class="login">
-        <div class="biglogo">
+    <main style="width: 26rem;">
+      <section class="newrecipe"style="width: 26rem;">
+        <div >
           <!-- Tu peux remplacer 'path_to_your_logo' avec le chemin vers ton image/logo si tu en as un -->
-          <img src="img/logo.png" alt="Logo" />
+          <img class="biglogo" src="img/logo.png" alt="Logo" style="width: 25%;"/>
         </div>
         <h2 class="primary">Félicitations !</h2>
-        <p>
+        <p style="width: 26rem;">
           Nous espérons que ce quiz t'a aidé à prendre conscience de l'urgence
           écologique et t'inspirera à réévaluer tes habitudes au quotidien pour
           un impact plus positif sur notre planète.
         </p>
-        <div class="margin10">
-          <button
-            class="button bg-prim"
-            onclick="window.location.href='profile.html'"
+        <div class="newrecipe">
+          <button class="margin10"
+            onclick="window.location.href='profile.php'"
           >
             Retour à l'accueil
           </button>
-          <!-- Remplace 'index.html' par la page d'accueil de ton site -->
+          
+          
         </div>
       </section>
     </main>
 
-    <footer class="downbar">
-      <!-- Ici, tu peux ajouter des éléments de pied de page si nécessaire -->
-    </footer>
+
   </body>
 </html>
