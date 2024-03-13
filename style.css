@@ -225,3 +225,18 @@ border-radius: 10px;}
     border-radius: 10px;    
     font-family: 'Helvetica', sans-serif;
     font-weight: normal;}
+
+    input[type=range] {
+        -webkit-appearance: none;     
+        padding: 0;                
+        font: inherit;               
+        outline: none;
+        color: var(--primary);                 
+        opacity: .8;
+        background: var(--lighter);            
+        box-sizing: border-box;      
+        transition: opacity .2s;
+        cursor:pointer;
+      }
+
+      
