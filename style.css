@@ -75,6 +75,10 @@ margin-top: 10%;}
         margin-inline-end: 5%;
         margin-top: 5%;}
 
+.login > p {display: inline; margin-left: 5%;}
+.login > a {display: inline;}
+.login >input[type=checkbox]{display: inline;width: 10%;margin-left: 40%;}
+
 .button:hover{
     background-color: var(--secondary);
 }

@@ -8,7 +8,7 @@
   </head>
 
   <header>
-    <a href="login.html"><img src="img/back.png" class="retour" alt="Retour"></a>
+    <a href="login.php"><img src="img/back.png" class="retour" alt="Retour"></a>
   </header>
 
   <main>
@@ -28,8 +28,12 @@
         <input type="password" name="password" placeholder="Mot de passe:" required="true">
         <input type="password" name="password2" class="login-input" placeholder="Vérifiez votre mot de passe:" required>
         
-        <input type="submit" class="button">
+
+
+        <p>J'accepte les</p><a href="docs/RGPD_racook.pdf">politiques de confidentialités</a>
+          <input type="checkbox" required="true"></input>
         
+        <input type="submit" class="button">
     </form>
 
     <?php
