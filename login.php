@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,7 +24,7 @@
     </form>
 
     <?php
-
+    
       if(isset($_POST["email"]) && isset($_POST["password"])){
         $email = $_POST["email"];
         $pass = $_POST["password"];
@@ -37,7 +38,8 @@
         foreach ($data as $row){
             if ($email == $row['email'] and $pass == $row['password']){
                 $success = true;
-                header ('location: home.php');
+                $_SESSION['id'] = $row['id'];
+                header ('location: main.php');
                 break;
             }
             else  {

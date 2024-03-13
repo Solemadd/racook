@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en" class="light_body">
   <head>
@@ -40,7 +41,7 @@ function topFunction() {
 } 
   </script>
   
-
+  
   <nav class="navbar">    
     <img class="smalllogo" src="img/logo.png" alt="LOGO">   
     <form action="">
@@ -60,7 +61,8 @@ function topFunction() {
   </footer>
 
   <aside id="filtres" class="">
-    <h3>Filtres:</h3>
+    <h3>Filtres: </h3>
+
     <form class="margin5">
       <p>Ingrédients:</p> <select name="" id="">
         <option value="1">Concombre</option>
@@ -76,6 +78,11 @@ function topFunction() {
  
   <main>
   <?php
+echo($_SESSION['id']);
+print($_SESSION['id']);
+print($_SESSION['id']);
+print($_SESSION['id']);
+print($_SESSION['id']);
 
 $db = new PDO("mysql:host=localhost;dbname=racook;charset=utf8mb4", "root", "");
 
@@ -95,6 +102,7 @@ $data_commentaire = $db->query("SELECT * FROM commentaire
 
 foreach ($data as $row) {
     echo '<section class="carte">
+    
             <article>
                 <div>
                 <h5 class="margin5">'.$row['nom_recette'].'</h5>
@@ -111,7 +119,7 @@ foreach ($data as $row) {
           <div>
           <img src="'.$row['url_recette'].'" alt="image de '.$row['nom_recette'].'">
           </div>
-          <button>Voir la recette</button>
+          <button onclick="window.location = \'affichage.php?id='.$row["ID"].'\'">Voir la recette</button>
           </section>';
 }
 ?>
