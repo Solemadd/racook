@@ -8,10 +8,10 @@
   </head>
 
   <nav class="downbar">
-    <a href="manage.html"><img src="img/navbarplus.png" alt=""></a>
-    <a href="main.html"><img src="img/navbarhome.png" alt=""></a>
-    <a href="profile.html"><img src="img/navbarprofile.png" alt=""></a>
-</nav>
+      <a href="manage.php"><img src="img/navbarplus.png" alt=""></a>
+      <a href="main.php"><img src="img/navbarhome.png" alt=""></a>
+      <a href="profile.php"><img src="img/navbarprofile.png" alt=""></a>
+  </nav>
 
 
 <main class="affichage">
@@ -32,9 +32,21 @@
     </article>
 </main>
 
-<main>
+<main class="newrecipe">
     <hr class="primary width100">
+  <h5>Publier un commentaire:</h5>
+      <form action="" style="margin-top: 5%;">
+        <input type="text" placeholder="Titre:">
+        <h1></h1>
+        <textarea name="" id="" cols="30" rows="6" placeholder="Comentaire:"></textarea>
+        <input type="submit" style="margin-top: 5%;">
+      </form>
     <h4>Commentaires:</h4>
+    <br>
+    <section class="carte">
+    <h5>Titre</h5>
+    <h6>Utilisateur:</h6>
+    <p>Commentaire</p></section>
 </main>
 
 

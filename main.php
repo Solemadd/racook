@@ -97,6 +97,7 @@ $data_commentaire = $db->query("SELECT * FROM commentaire
 
 foreach ($data as $row) {
     echo '<section class="carte">
+    '.$_SESSION['user_id'].'
             <article>
                 <div>
                 <h5 class="margin5">'.$row['nom_recette'].'</h5>

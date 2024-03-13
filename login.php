@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,7 +24,7 @@
     </form>
 
     <?php
-    session_start();
+    
       if(isset($_POST["email"]) && isset($_POST["password"])){
         $email = $_POST["email"];
         $pass = $_POST["password"];

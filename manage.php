@@ -41,9 +41,9 @@
 
 
 <nav class="downbar">
-    <a href="manage.html"><img src="img/navbarplus.png" alt=""></a>
-    <a href="main.html"><img src="img/navbarhome.png" alt=""></a>
-    <a href="profile.html"><img src="img/navbarprofile.png" alt=""></a>
-</nav>
+      <a href="manage.php"><img src="img/navbarplus.png" alt=""></a>
+      <a href="main.php"><img src="img/navbarhome.png" alt=""></a>
+      <a href="profile.php"><img src="img/navbarprofile.png" alt=""></a>
+  </nav>
 
 </html>
