@@ -162,8 +162,9 @@ footer > button{
 
 
 .carte > article {display:inline-block;}
+.carte > article > div {width: 90%;}
 .carte > div > img {object-fit: cover;height: 9rem;width: auto;margin-top: 10%;}
-.carte > div {width: 35%;box-sizing: border-box;overflow: hidden;display:inline-flex;border-radius: 10px;}
+.carte > div {width: 30%;box-sizing: border-box;overflow: hidden;display:inline-flex;border-radius: 10px;}
 .carte > button{border-radius: 10px;
 border: transparent;
 background-color: var(--lighter);

@@ -78,6 +78,11 @@ function topFunction() {
  
   <main>
   <?php
+echo($_SESSION['id']);
+print($_SESSION['id']);
+print($_SESSION['id']);
+print($_SESSION['id']);
+print($_SESSION['id']);
 
 $db = new PDO("mysql:host=localhost;dbname=racook;charset=utf8mb4", "root", "");
 
@@ -97,7 +102,7 @@ $data_commentaire = $db->query("SELECT * FROM commentaire
 
 foreach ($data as $row) {
     echo '<section class="carte">
-    '.$_SESSION['user_id'].'
+    
             <article>
                 <div>
                 <h5 class="margin5">'.$row['nom_recette'].'</h5>
