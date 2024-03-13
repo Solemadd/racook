@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 12 mars 2024 à 10:45
--- Version du serveur : 8.2.0
--- Version de PHP : 8.2.13
+-- Généré le : mer. 13 mars 2024 à 12:48
+-- Version du serveur : 8.0.31
+-- Version de PHP : 8.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `projetgaspillage`
+-- Base de données : `racook`
 --
 
 -- --------------------------------------------------------
@@ -49,14 +49,18 @@ CREATE TABLE IF NOT EXISTS `commentaire` (
   `titre_com` varchar(255) NOT NULL,
   `contenu_com` varchar(255) NOT NULL,
   `ID_utilisateur` int NOT NULL,
-  `recette` varchar(255) NOT NULL,
-  `url_img` varchar(255) NOT NULL,
-  `url_video` varchar(255) NOT NULL,
   `ID_recette` int NOT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `ID_recette` (`ID_recette`),
   UNIQUE KEY `ID_utilisateur` (`ID_utilisateur`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `commentaire`
+--
+
+INSERT INTO `commentaire` (`ID`, `titre_com`, `contenu_com`, `ID_utilisateur`, `ID_recette`) VALUES
+(1, 'Super bon !!!!!!', 'Très rapide à faire.', 11, 4);
 
 -- --------------------------------------------------------
 
@@ -68,10 +72,16 @@ DROP TABLE IF EXISTS `ingredient`;
 CREATE TABLE IF NOT EXISTS `ingredient` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `nom_ingredient` varchar(255) NOT NULL,
-  `ID_recette` int NOT NULL,
-  PRIMARY KEY (`ID`),
-  UNIQUE KEY `ID_recette` (`ID_recette`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `ingredient`
+--
+
+INSERT INTO `ingredient` (`ID`, `nom_ingredient`) VALUES
+(1, 'Tomate'),
+(2, 'Mozza');
 
 -- --------------------------------------------------------
 
@@ -89,15 +99,43 @@ CREATE TABLE IF NOT EXISTS `recette` (
   `temps_cuisson` int NOT NULL,
   `difficulte` int NOT NULL,
   `quantite` int NOT NULL,
-  `ID_aime` int NOT NULL,
-  `ID_ingredient` int NOT NULL,
-  `ID_commentaire` int NOT NULL,
+  `url_recette` text NOT NULL,
   PRIMARY KEY (`ID`),
-  UNIQUE KEY `ID_ingredient` (`ID_ingredient`),
-  UNIQUE KEY `ID_commentaire` (`ID_commentaire`),
-  UNIQUE KEY `ID_utilisateur` (`ID_utilisateur`),
-  UNIQUE KEY `ID_aime` (`ID_aime`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  UNIQUE KEY `ID_utilisateur` (`ID_utilisateur`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `recette`
+--
+
+INSERT INTO `recette` (`ID`, `ID_utilisateur`, `nom_recette`, `etape`, `temps_preparation`, `temps_cuisson`, `difficulte`, `quantite`, `url_recette`) VALUES
+(4, 10, 'gratin de courgette', 'faire ça :\r\nensuite :', 1, 2, 3, 6, 'https://th.bing.com/th/id/OSK.7a6e97e2075a4545399cdba837b0f56b?pid=ImgDet&w=100&h=100&c=7&dpr=1,3');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `recette_ingredient`
+--
+
+DROP TABLE IF EXISTS `recette_ingredient`;
+CREATE TABLE IF NOT EXISTS `recette_ingredient` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `ID_recette` int NOT NULL,
+  `ID_ingredient` int NOT NULL,
+  `quantite` int NOT NULL,
+  `unite` varchar(255) NOT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `ID_recette` (`ID_recette`),
+  KEY `ID_ingredient` (`ID_ingredient`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `recette_ingredient`
+--
+
+INSERT INTO `recette_ingredient` (`ID`, `ID_recette`, `ID_ingredient`, `quantite`, `unite`) VALUES
+(1, 4, 1, 4, ''),
+(2, 4, 2, 250, 'g');
 
 -- --------------------------------------------------------
 
@@ -110,7 +148,15 @@ CREATE TABLE IF NOT EXISTS `role` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `nom_du_role` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `role`
+--
+
+INSERT INTO `role` (`ID`, `nom_du_role`) VALUES
+(3, 'administrateur'),
+(4, 'utilisateur');
 
 -- --------------------------------------------------------
 
@@ -129,8 +175,16 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `ID_role` int NOT NULL,
   PRIMARY KEY (`ID`),
-  UNIQUE KEY `ID_role` (`ID_role`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `ID_role` (`ID_role`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `utilisateur`
+--
+
+INSERT INTO `utilisateur` (`ID`, `prenom`, `nom`, `age`, `username`, `email`, `password`, `ID_role`) VALUES
+(10, 'antoine', 'gobbe', 20, 'antoineg', 'antoine@gmail.com', 'antoine', 4),
+(11, 'tayib', 'bzr', 22, 'tayibbzr', 'tayib@gmail.com', 'tayib', 4);
 
 --
 -- Contraintes pour les tables déchargées
@@ -144,13 +198,24 @@ ALTER TABLE `aime`
   ADD CONSTRAINT `aime_ibfk_2` FOREIGN KEY (`ID_recette`) REFERENCES `recette` (`ID`);
 
 --
+-- Contraintes pour la table `commentaire`
+--
+ALTER TABLE `commentaire`
+  ADD CONSTRAINT `commentaire_ibfk_1` FOREIGN KEY (`ID_utilisateur`) REFERENCES `utilisateur` (`ID`),
+  ADD CONSTRAINT `commentaire_ibfk_2` FOREIGN KEY (`ID_recette`) REFERENCES `recette` (`ID`);
+
+--
 -- Contraintes pour la table `recette`
 --
 ALTER TABLE `recette`
-  ADD CONSTRAINT `recette_ibfk_1` FOREIGN KEY (`ID_utilisateur`) REFERENCES `utilisateur` (`ID`),
-  ADD CONSTRAINT `recette_ibfk_2` FOREIGN KEY (`ID_aime`) REFERENCES `aime` (`ID`),
-  ADD CONSTRAINT `recette_ibfk_3` FOREIGN KEY (`ID_ingredient`) REFERENCES `ingredient` (`ID`),
-  ADD CONSTRAINT `recette_ibfk_4` FOREIGN KEY (`ID_commentaire`) REFERENCES `commentaire` (`ID`);
+  ADD CONSTRAINT `recette_ibfk_1` FOREIGN KEY (`ID_utilisateur`) REFERENCES `utilisateur` (`ID`);
+
+--
+-- Contraintes pour la table `recette_ingredient`
+--
+ALTER TABLE `recette_ingredient`
+  ADD CONSTRAINT `recette_ingredient_ibfk_1` FOREIGN KEY (`ID_recette`) REFERENCES `recette` (`ID`),
+  ADD CONSTRAINT `recette_ingredient_ibfk_2` FOREIGN KEY (`ID_ingredient`) REFERENCES `ingredient` (`ID`);
 
 --
 -- Contraintes pour la table `utilisateur`
