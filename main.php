@@ -78,11 +78,7 @@ function topFunction() {
  
   <main>
   <?php
-echo($_SESSION['id']);
-print($_SESSION['id']);
-print($_SESSION['id']);
-print($_SESSION['id']);
-print($_SESSION['id']);
+
 
 $db = new PDO("mysql:host=localhost;dbname=racook;charset=utf8mb4", "root", "");
 

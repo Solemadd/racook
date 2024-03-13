@@ -38,7 +38,8 @@
         foreach ($data as $row){
             if ($email == $row['email'] and $pass == $row['password']){
                 $success = true;
-                $_SESSION['id'] = $row['id'];
+                $_SESSION['id'] = $row['ID'];
+                
                 header ('location: main.php');
                 break;
             }
