@@ -142,7 +142,7 @@ footer > button{
     border-radius: 10px;
     border: 2px solid var(--primary);
     position: fixed;
-    top: 93%;
+    top: 85%;
     right: 5%;
 }
 
@@ -168,5 +168,14 @@ font-size: 120%;
 margin-top: 2%;
 margin-left: 25%;}
 .carte > button:hover button:active{background-color: var(--secondary);}
+
+.downbar {background-image: url(img/navbarbg.png);
+width: 100%;
+padding-top: 3%;
+position: fixed;
+bottom: 2%;
+}
+.downbar > a {margin-inline: 11%;}
+
 
 .hidden{display: none;}
