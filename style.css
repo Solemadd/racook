@@ -179,3 +179,25 @@ bottom: 2%;
 
 
 .hidden{display: none;}
+
+
+
+.perso > button {
+    background-color: var(--primary);
+    width: 125%;
+    margin-inline: 20%;
+    display: flex;
+    align-items:center;
+    margin-top: 5%;
+    border-radius: 10px;
+    border: var(--secondary) 5px solid;
+    padding-top: 2%;
+}
+.perso > button > h2 {display: inline; padding-top: 5%;margin:0%; margin-left: 5%;margin-bottom: 5%;}
+.perso > button > img {display: inline;margin-left: 2%;}
+
+.param {width: 80%; margin-left: 5%;}
+.param > button {width: 200%;height: 5rem; margin-inline: 3%;background-color: transparent;border: transparent;align-items: center;display: flex;}
+.param > button > h2 {display: inline;margin-top: 8%;}
+.param > button > image {display: inline;}
+.param > br {margin-top: 70%;}
