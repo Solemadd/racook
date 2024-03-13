@@ -203,3 +203,25 @@ bottom: 2%;
 .param > br {margin-top: 70%;}
 
 
+.newrecipe > img {display: inline;}
+.newrecipe > h2 {display: inline;margin: 5%;}
+.newrecipe {margin: 0;width: 26rem;margin-top: 5%;}
+.newrecipe > form {
+    margin: 10%;
+}
+.newrecipe > form > select {border: transparent 3px solid;
+    border-radius: 10px;}
+.newrecipe > form > h5 > select {border: transparent 3px solid;
+    border-radius: 10px;}
+.newrecipe > form > input {border: transparent 3px solid;
+border-radius: 10px;}
+.newrecipe > form > button {border: transparent 3px solid;
+    border-radius: 10px;}
+.namerecipe {font-size: 1.3rem;width: 18rem;}
+
+.newrecipe > form > textarea {
+    font-size: 1rem;width: 18rem;
+    border: transparent 3px solid;
+    border-radius: 10px;    
+    font-family: 'Helvetica', sans-serif;
+    font-weight: normal;}

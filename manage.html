@@ -10,9 +10,9 @@
 
   <main class="newrecipe">
     <h2></h2>
-    <button><h2>Ajout recette</h2><img src="img/couverts.png" alt="roue des paramètres"></button>
+    <h2>Ajout recette</h2><img src="img/couverts.png" alt="roue des paramètres">
     <form class="recette" action="">
-        <input type="text" placeholder="Nom de la recette:">
+        <input type="text" class="namerecipe" placeholder="Nom de la recette:">
         <h5>Préparation:
         <select name="prep" id="">
             <option value="1">5 minutes</option>
@@ -45,9 +45,6 @@
         </select></h5>
         <h5>Ingrédients:</h5>
         
-        
-        <button id="add"><h5>+</h5></button>
-        <!--QUAND ON CLIQUE SUR LE BOUTTON IL FAUT QUE CA AJOUTE UN NOUVEAU CHAMP:-->
         <select name="ingredient" id="">
             <option value="1">concombre</option>
         </select>
@@ -56,9 +53,14 @@
             <option value="1">g</option>
             <option value="2">Kg</option>
             <option value="3">L</option>
-        </select>
+        </select>        
+        <br>
+        <button id="add"><h5>+</h5></button>
+        <!--QUAND ON CLIQUE SUR LE BOUTTON IL FAUT QUE CA AJOUTE UN NOUVEAU CHAMP:-->
+
         <h5>Etapes:</h5>
-        <input type="text" class="etape">
+        <textarea name="Text1" cols="40" rows="10"></textarea>
+        <button id="add"><h5>+</h5></button>
 
     </form>
 
