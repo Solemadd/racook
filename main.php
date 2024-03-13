@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en" class="light_body">
   <head>
@@ -40,7 +41,7 @@ function topFunction() {
 } 
   </script>
   
-
+  
   <nav class="navbar">    
     <img class="smalllogo" src="img/logo.png" alt="LOGO">   
     <form action="">
@@ -60,7 +61,8 @@ function topFunction() {
   </footer>
 
   <aside id="filtres" class="">
-    <h3>Filtres:</h3>
+    <h3>Filtres: </h3>
+
     <form class="margin5">
       <p>Ingrédients:</p> <select name="" id="">
         <option value="1">Concombre</option>
