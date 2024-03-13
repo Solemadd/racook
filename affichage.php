@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en" class="light_body">
   <head>
@@ -65,7 +66,7 @@ foreach ($data as $row) {
 <main class="newrecipe">
     <hr class="primary width100">
   <h5>Publier un commentaire:</h5>
-      <form action="" style="margin-top: 5%;">
+      <form action="affichage.php?id=<?php $_GET["id"] ?>" style="margin-top: 5%;" method="post">
         <input type="text" name="titre" placeholder="Titre:">
         <h1></h1>
         <textarea name="commentaire" id="" cols="30" rows="6" placeholder="Comentaire:"></textarea>
@@ -75,18 +76,21 @@ foreach ($data as $row) {
 
     
       <?php
+
   if (isset($_POST["titre"]) && isset($_POST["commentaire"])){
   $titre = $_POST["titre"];
   $commentaire = $_POST["commentaire"];
   $user = $_SESSION['id'];
+  $recette = $_GET['id'];
 
 
   $db = new PDO("mysql:host=localhost;dbname=racook;charset=utf8mb4", "root", "");
 
-  $stmt = $db->prepare("INSERT INTO commentaire (titre_com, contenu_com, ID_utilisateur) VALUES (:titre_com, :contenu_com, :ID_utilisateur)");
+  $stmt = $db->prepare("INSERT INTO commentaire (titre_com, contenu_com, ID_utilisateur, ID_recette) VALUES (:titre_com, :contenu_com, :ID_utilisateur, :ID_recette)");
   $stmt->bindParam(":titre_com", $titre);
   $stmt->bindParam(":contenu_com", $commentaire);
   $stmt->bindParam(":ID_utilisateur", $user);
+  $stmt->bindParam(":ID_recette", $recette);
 
   $stmt->execute();
 
@@ -102,7 +106,7 @@ foreach ($data as $row) {
 
 
 
-
+<h4>Commentaires:</h4>
 <?php
 
 $db = new PDO("mysql:host=localhost;dbname=racook;charset=utf8mb4", "root", "");
@@ -115,7 +119,6 @@ foreach ($data as $row) {
     foreach ($data_commentaire as $row_commentaire){
       if ($row['ID'] === $row_commentaire['ID_recette']) {
         echo '
-        <h4>Commentaires:</h4>
         <br>
         <section class="carte">
         <h5>'.$row_commentaire['titre_com'].'</h5>
