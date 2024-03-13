@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" class="light_body">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Racook</title>
+  </head>
+
+
+  <main class="newrecipe">
+    <a href="profile.html"><img src="img/back.png" class="retour" alt="Retour"></a> <br class="margin10">
+    <h2></h2>
+    <h2>Mon frigo</h2><img src="img/box.png" alt="roue des paramètres">
+
+    <a href="scan.html" style="margin: 10%; text-align: center;align-items: center;"><h4>Scanner mon frigo <img src="img/scan.png" alt="" style=""></h4></a>
+    
+    <form class="recette" action="">
+        <h5>Dans mon frigo:</h5>
+        
+        <!--La section en dessous est la section pour chaque aliment présent dans le frigo-->
+        <button id="remove"><h5>x</h5></button>
+        <select name="ingredient" id="">
+            <option value="1">concombre</option>
+        </select>
+        <input type="number" name="quantite" id="" min="1" max="999">
+        <select name="mesure" id="">
+            <option value="1">g</option>
+            <option value="2">Kg</option>
+            <option value="3">L</option>
+        </select>        
+        <br>
+
+
+        <button id="add"><h5>+</h5></button>
+        <!--QUAND ON CLIQUE SUR LE BOUTTON IL FAUT QUE CA AJOUTE UN NOUVEAU CHAMP:-->
+
+
+    </form>
+
+</main>
+
+
+<nav class="downbar">
+    <a href="manage.html"><img src="img/navbarplus.png" alt=""></a>
+    <a href="main.html"><img src="img/navbarhome.png" alt=""></a>
+    <a href="profile.html"><img src="img/navbarprofile.png" alt=""></a>
+</nav>
+
+</html>
