@@ -160,7 +160,6 @@ footer > button{
     
 }
 
-.carte > p {}
 
 .carte > article {display:inline-block;}
 .carte > div > img {object-fit: cover;height: 9rem;width: auto;margin-top: 10%;}
@@ -232,7 +231,8 @@ border-radius: 10px;}
     font-weight: normal;}
 
     input[type=range] {
-        -webkit-appearance: none;     
+        -webkit-appearance: none;
+        appearance:unset ;     
         padding: 0;                
         font: inherit;               
         outline: none;
