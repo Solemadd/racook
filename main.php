@@ -111,7 +111,7 @@ foreach ($data as $row) {
           <div>
           <img src="'.$row['url_recette'].'" alt="image de '.$row['nom_recette'].'">
           </div>
-          <button>Voir la recette</button>
+          <button onclick="window.location = \'affichage.html/'.$row'\'">Voir la recette</button>
           </section>';
 }
 ?>
