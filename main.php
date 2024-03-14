@@ -17,6 +17,7 @@
 
 
 
+
   //PAS TOUCHE A LA SUITE
 
   
@@ -50,7 +51,7 @@ function topFunction() {
            name="search"
            placeholder="Rechercher...">
     <button >🔍</button>
-    <button name="action" value="filter">⚙️</button>
+    <button id="filter">⚙️</button>
     </form> 
       <hr class="primary width100">
   </nav>
@@ -60,7 +61,7 @@ function topFunction() {
     
   </footer>
 
-  <aside id="filtres" class="">
+  <aside id="filtres" class="hidden">
     <h3>Filtres: </h3>
 
     <form class="margin5">
