@@ -187,10 +187,10 @@ $data_commentaire = $db->query("SELECT * FROM commentaire
 
 
     foreach ($data_commentaire as $row_commentaire){
-      $userdat = $db->query("SELECT username FROM utilisateur WHERE ID =".$row_commentaire['ID_utilisateur']."");
-      foreach($userdat as $urow){
-        $username = $urow['username'];
-      }
+      $userdat = $db->query("SELECT * FROM utilisateur");
+      foreach($userdat as $userrow){
+        if($userrow['ID_utilisateur'] = $row_commentaire['ID_utilisateur'])$username = $userrow['username'];}
+      
 
       if ($_GET['id'] == $row_commentaire['ID_recette']) {
         echo '

@@ -77,7 +77,7 @@ function topFunction() {
     <hr class="width100 primary">
   </aside>
  
-  <main class="main-main">
+  <main class="width100">
   <?php
 
 

@@ -153,12 +153,13 @@ footer > button{
 
 
 .carte{
-    
+    width: 80%;
     margin-inline: 5%;
     background-color: var(--shadow);
     border: var(--lighter);
     padding: 5%;
     border-radius: 10px;
+    display: block;
     
 }
 
