@@ -69,8 +69,8 @@ foreach ($data as $row) {
 }
   ?>
 
-<main class="newrecipe"><form action="" method="post">
-  <button style="background-color:transparent; margin:0;"><?php 
+<main class="newrecipe"><form action="" style="margin:0;" method="post">
+  <button style="margin:0;background-color:transparent;"><?php 
 if ($_POST){
   if($_POST['fnc']== 'like'){
 
@@ -112,10 +112,12 @@ if ($_POST){
       $stmt->execute();
       $liked= true;}}}
     
-    if($liked){echo('<img src="img/like.png" alt="liké">');}else{echo('<img src="img/notliked.png" alt="pas liké">');}
+    if($liked){echo('<img src="img/like.png" alt="liké">');}else{echo('<img src="img/notliked.png" alt="liké">');}
     
  
-      }}?></button>
+      }}else{echo('<img src="img/notliked.png" alt="liké">');}
+
+      ?></button>
 <input type="hidden" name="fnc" value="like">
 <input type="hidden" name="id" value="<?php echo($_GET['id']);?>">
 </form></main>

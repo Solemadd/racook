@@ -18,7 +18,7 @@
         <input type="number" name="quantite" id="" min="1" max="999"> <p>min</p>
         </h5><h5>Cuisson:<input type="number" name="tempsprep" id="" min="1" max="999"> <p>min</p></h5>
         <h5>Ingrédients:</h5>
-        
+        <span id="line">
         <select name="ingredient" id="">
         <?php
             $db = new PDO("mysql:host=localhost;dbname=racook;charset=utf8mb4", "root", "");
@@ -39,8 +39,8 @@
             <option value="2">Kg</option>
             <option value="3">L</option>
         </select>        
-        <br>
-        <button id="add"><h5>+</h5></button>
+        <br></span>
+        <button id="add" onclick="newline.js"><h5>+</h5></button>
         <!--QUAND ON CLIQUE SUR LE BOUTTON IL FAUT QUE CA AJOUTE UN NOUVEAU CHAMP:-->
 
         <h5>Etapes:</h5>

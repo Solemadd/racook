@@ -17,7 +17,7 @@
     <main class="param">
         <br>
         <button onclick="window.location = 'param.php'"><h2>Mon compte</h2><img src="img/param.png" alt="roue des paramètres"></button>
-        <button onclick="window.location = 'recettes.html'"><h2>Mes recettes</h2><img src="img/couverts.png" alt="roue des paramètres"></button>
+        <button onclick="window.location = 'recettes.php'"><h2>Mes recettes</h2><img src="img/couverts.png" alt="roue des paramètres"></button>
         <button onclick="window.location = 'frigo.html'"><h2>Mon frigo</h2><img src="img/box.png" alt="roue des paramètres"></button>
     </main>
 
