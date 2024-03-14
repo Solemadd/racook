@@ -44,14 +44,14 @@ function topFunction() {
   
   <nav class="navbar">    
     <img class="smalllogo" src="img/logo.png" alt="LOGO">   
-    <form action="">
+    <form action="" method="post">
     <input type="search"
            id="search"
            name="search"
            placeholder="Rechercher...">
-        <button class="search-button">🔍</button>
-        <button class="filter-button" id="filter">⚙️</button>
-      </form> 
+    <button >🔍</button>
+    <button name="action" value="filter">⚙️</button>
+    </form> 
       <hr class="primary width100">
   </nav>
 
