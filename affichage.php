@@ -14,6 +14,8 @@
       <a href="profile.php"><img src="img/navbarprofile.png" alt=""></a>
   </nav>
 
+  <a href="main.php"><img src="img/back.png" class="retour" alt="Retour"></a>
+
 
   <?php
 
@@ -68,16 +70,55 @@ foreach ($data as $row) {
   ?>
 
 <main class="newrecipe"><form action="" method="post">
-  <button><?php 
+  <button style="background-color:transparent; margin:0;"><?php 
   $db = new PDO("mysql:host=localhost;dbname=racook;charset=utf8mb4", "root", "");
   $likedata = $db->query('SELECT * FROM aime WHERE ID_recette = '.$_GET['id'].' AND ID_utilisateur = '.$_SESSION['id'].'');
   $liked = false;
-  foreach($likedata as $likerow){if ($likerow['ID_utilisateur'] == $_SESSION['id']){echo('liké!'); $liked=true;}}
-    if (!$liked){echo('like moi ça là');}
+  $abort = false;
+
+  foreach($likedata as $likerow){
+    if ($likerow['ID_utilisateur'] == $_SESSION['id']){ $liked=true; $abort = true;
+      if ($_POST){
+      if($_POST['fnc']== 'like'){
+        $user = $_SESSION['id'];
+        $recette = $_POST['id'];
+
+        $stmt = $db->prepare("DELETE FROM aime WHERE ID = ".$likerow['ID']."");
+        $stmt->execute();
+        $liked=false;
+      }}}}
+    
+    
+  
+    
+    if (!$liked AND !$abort){
+      if ($_POST){
+      if($_POST['fnc']== 'like'){
+        foreach($likedata as $likerow){
+
+        }
+
+      $user = $_SESSION['id'];
+      $recette = $_POST['id'];
+
+      $stmt = $db->prepare("INSERT INTO aime (ID_utilisateur, ID_recette) VALUES (:ID_utilisateur, :ID_recette)");
+      
+      $stmt->bindParam(":ID_utilisateur", $user);
+      $stmt->bindParam(":ID_recette", $recette);
+
+      $stmt->execute();
+      $liked= true;}}}
+    
+    if($liked){echo('<img src="img/like.png" alt="liké">');}else{echo('<img src="img/notliked.png" alt="pas liké">');}
+    
  
   ?></button>
-<input type="hidden" value="<?php echo($_GET['id']);?>">
+<input type="hidden" name="fnc" value="like">
+<input type="hidden" name="id" value="<?php echo($_GET['id']);?>">
 </form></main>
+
+
+
 
 
 <main class="newrecipe">

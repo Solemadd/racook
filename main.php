@@ -76,7 +76,7 @@ function topFunction() {
     <hr class="width100 primary">
   </aside>
  
-  <main>
+  <main class="main-main">
   <?php
 
 
@@ -99,7 +99,7 @@ $data_commentaire = $db->query("SELECT * FROM commentaire
 foreach ($data as $row) {
     echo '<section class="carte" style="margin-top:5%">
     
-            <article>
+            <article style="width:60%;">
                 <div>
                 <h5 class="margin5">'.$row['nom_recette'].'</h5>
                 <h6>Ingrédients:</h6>';
