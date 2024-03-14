@@ -71,6 +71,9 @@ foreach ($data as $row) {
 
 <main class="newrecipe"><form action="" method="post">
   <button style="background-color:transparent; margin:0;"><?php 
+if ($_POST){
+  if($_POST['fnc']== 'like'){
+
   $db = new PDO("mysql:host=localhost;dbname=racook;charset=utf8mb4", "root", "");
   $likedata = $db->query('SELECT * FROM aime WHERE ID_recette = '.$_GET['id'].' AND ID_utilisateur = '.$_SESSION['id'].'');
   $liked = false;
@@ -112,7 +115,7 @@ foreach ($data as $row) {
     if($liked){echo('<img src="img/like.png" alt="liké">');}else{echo('<img src="img/notliked.png" alt="pas liké">');}
     
  
-  ?></button>
+      }}?></button>
 <input type="hidden" name="fnc" value="like">
 <input type="hidden" name="id" value="<?php echo($_GET['id']);?>">
 </form></main>
@@ -130,6 +133,7 @@ foreach ($data as $row) {
         <textarea name="commentaire" id="" cols="30" rows="6" placeholder="Comentaire:"></textarea>
         <input type="submit" style="margin-top: 5%;"> 
         <input type="hidden" name="id" value="<?php echo($_GET['id']);?>">
+        <input type="hidden" name="fnc" value="comm">
       </form>
 
 

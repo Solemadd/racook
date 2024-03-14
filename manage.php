@@ -33,7 +33,7 @@
         }
         ?>
         </select>
-        <input type="number" name="temps" id="" min="1" max="999">
+        <input type="number" name="temps" id="" min="1" max="999" required>
         <select name="mesure" id="">
             <option value="1">g</option>
             <option value="2">Kg</option>
@@ -51,18 +51,9 @@
 
     <?php
 
-  if ($password === $password2) {
-  if (isset($_POST["nom"]) && isset($_POST["username"]) && isset($_POST["prenom"]) && isset($_POST["nom"]) && isset($_POST["age"]) && isset($_POST["password"])){
-  $email = $_POST["email"];
-  $username = $_POST["username"];
-  $prenom = $_POST["prenom"];
-  $nom = $_POST["nom"];
-  $age = $_POST["age"];
-  $password = $_POST["password"];
-  $role = '4';
+ if($_POST){
 
-
-  $db = new PDO("mysql:host=localhost;dbname=racook;charset=utf8mb4", "root", "");
+ $db = new PDO("mysql:host=localhost;dbname=racook;charset=utf8mb4", "root", "");
 
   $stmt = $db->prepare("INSERT INTO recette (prenom, nom, age, username, email, password , ID_role) VALUES (:prenom, :nom, :age, :username, :email, :password, :roles)");
   $stmt->bindParam(":prenom", $prenom);
@@ -75,12 +66,9 @@
 
   $stmt->execute();
 
-  
-  echo '<div>
-  <strong>C est nickel</strong> l\'ajout est OK.
-  </div>';
-  }
-}
+ }
+
+ 
 
     ?>
 
