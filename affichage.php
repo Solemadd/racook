@@ -29,10 +29,11 @@ $data_recette_ingredient = $db->query("SELECT * FROM ingredient
                                                                               ")->fetchALL();
 
 foreach ($data as $row) {
+
+  if ($row['ID'] == $_GET['id']) {
   echo '
 
-
-  <main class="affichage">
+  <main class="affichage" style="margin-top:5%">
     <div>
       <img src="'.$row['url_recette'].'" alt="image de petites tartes à la carotte">
     </div>
@@ -49,7 +50,7 @@ foreach ($data as $row) {
             if ($row['ID'] === $row_ingredient['ID_recette']) {
               echo '
               '.$row_ingredient['quantite'].''.$row_ingredient['unite'].' '.$row_ingredient['nom_ingredient'].'
-              ';
+              <br>';
             }
             };'
       <h6>Cuisson:</h6>
@@ -58,9 +59,25 @@ foreach ($data as $row) {
           <p>'.$row['etape'].'</p>
       </div>
     </article>
-</main>';
+</main>
+
+'
+
+;}
 }
   ?>
+
+<main class="newrecipe"><form action="" method="post">
+  <button><?php 
+  $db = new PDO("mysql:host=localhost;dbname=racook;charset=utf8mb4", "root", "");
+  $likedata = $db->query('SELECT * FROM aime WHERE ID_recette = '.$_GET['id'].' AND ID_utilisateur = '.$_SESSION['id'].'');
+  $liked = false;
+  foreach($likedata as $likerow){if ($likerow['ID_utilisateur'] == $_SESSION['id']){echo('liké!'); $liked=true;}}
+    if (!$liked){echo('like moi ça là');}
+ 
+  ?></button>
+<input type="hidden" value="<?php echo($_GET['id']);?>">
+</form></main>
 
 
 <main class="newrecipe">
@@ -70,8 +87,12 @@ foreach ($data as $row) {
         <input type="text" name="titre" placeholder="Titre:">
         <h1></h1>
         <textarea name="commentaire" id="" cols="30" rows="6" placeholder="Comentaire:"></textarea>
-        <input type="submit" style="margin-top: 5%;">
+        <input type="submit" style="margin-top: 5%;"> 
+        <input type="hidden" name="id" value="<?php echo($_GET['id']);?>">
       </form>
+
+
+
 
 
     
@@ -81,10 +102,12 @@ foreach ($data as $row) {
   $titre = $_POST["titre"];
   $commentaire = $_POST["commentaire"];
   $user = $_SESSION['id'];
-  $recette = $_GET['id'];
+  $recette = $_POST['id'];
 
 
   $db = new PDO("mysql:host=localhost;dbname=racook;charset=utf8mb4", "root", "");
+
+  
 
   $stmt = $db->prepare("INSERT INTO commentaire (titre_com, contenu_com, ID_utilisateur, ID_recette) VALUES (:titre_com, :contenu_com, :ID_utilisateur, :ID_recette)");
   $stmt->bindParam(":titre_com", $titre);
@@ -115,21 +138,30 @@ $data_commentaire = $db->query("SELECT * FROM commentaire
                                  INNER JOIN recette
                                  ON commentaire.ID_recette = recette.ID")->fetchAll();
 
-foreach ($data as $row) {
+
+
+
     foreach ($data_commentaire as $row_commentaire){
-      if ($row['ID'] === $row_commentaire['ID_recette']) {
+      $userdat = $db->query("SELECT username FROM utilisateur WHERE ID =".$row_commentaire['ID_utilisateur']."");
+      foreach($userdat as $urow){
+        $username = $urow['username'];
+      }
+
+      if ($_GET['id'] == $row_commentaire['ID_recette']) {
         echo '
         <br>
-        <section class="carte">
+        <section class="carte" style="margin: 0;margin-top:5%;margin-left:2%;">
         <h5>'.$row_commentaire['titre_com'].'</h5>
-        <h6>Utilisateur: '.$row_commentaire['ID_utilisateur'].'</h6>
+        <h6>Utilisateur: '.$username.'</h6>
         <p>'.$row_commentaire['contenu_com'].'</p></section>
         ';
       }
       }
 ;
-}
+
   ?>
+
+  <br style="margin-top:10%">
 </main>
 
 

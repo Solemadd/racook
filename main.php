@@ -97,7 +97,7 @@ $data_commentaire = $db->query("SELECT * FROM commentaire
 
 
 foreach ($data as $row) {
-    echo '<section class="carte">
+    echo '<section class="carte" style="margin-top:5%">
     
             <article>
                 <div>
@@ -120,6 +120,7 @@ foreach ($data as $row) {
 }
 ?>
   </main>
+  <br style="margin-top:300px">
 
   <nav class="downbar">
       <a href="manage.php"><img src="img/navbarplus.png" alt=""></a>

@@ -56,7 +56,7 @@
       ?>
       <form>
       <button class="margin5" style="background-color: #e8cd93; font-size: 1rem;">Telecharger mes données</button>
-        <button class="margin5" style="background-color: red;font-size: 1rem;">Supprimer mon compte</button>
+      <button class="margin5" style="background-color: red;font-size: 1rem;">Supprimer mon compte</button>
       </form>
 
         <a href="docs/RGPD_Racook.pdf">Accords de confidentialité</a>
