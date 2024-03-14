@@ -181,23 +181,22 @@ $db = new PDO("mysql:host=localhost;dbname=racook;charset=utf8mb4", "root", "");
 
 $data_commentaire = $db->query("SELECT * FROM commentaire
                                  INNER JOIN recette
-                                 ON commentaire.ID_recette = recette.ID")->fetchAll();
+                                 ON commentaire.ID_recette = recette.ID
+                                 INNER JOIN utilisateur
+                                 ON commentaire.ID_utilisateur = utilisateur.ID")->fetchAll();
 
 
 
 
     foreach ($data_commentaire as $row_commentaire){
-      $userdat = $db->query("SELECT * FROM utilisateur");
-      foreach($userdat as $userrow){
-        if($userrow['ID_utilisateur'] = $row_commentaire['ID_utilisateur'])$username = $userrow['username'];}
-      
+
 
       if ($_GET['id'] == $row_commentaire['ID_recette']) {
         echo '
         <br>
         <section class="carte" style="margin: 0;margin-top:5%;margin-left:2%;">
         <h5>'.$row_commentaire['titre_com'].'</h5>
-        <h6>Utilisateur: '.$username.'</h6>
+        <h6>Utilisateur: '.$row_commentaire['username'].'</h6>
         <p>'.$row_commentaire['contenu_com'].'</p></section>
         ';
       }
